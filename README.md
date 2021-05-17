@@ -25,9 +25,9 @@ In practice, this should be possible without needing to use Processing for Pi OS
 
 2. Launch the RaspberryPi
 
-3. Download and copy the GPIOv11 files onto the Pi. This tutorial uses /home/pi/GPIOv11 as the location fo the files
+3. Download and copy the PIRVideo files onto the Pi. This tutorial uses /home/pi/GPIOv11 as the location fo the files
 
-4. Add the desired video to /home/pi/GPIOv11/data. By default, the program is set to use a file called "movie.mp4"
+4. Add the desired video to /home/pi/PIRVideo/data. By default, the program is set to use a file called "movie.mp4"
 4. a. In case you have a different filename (recommend to use .mp4 encoding), you can change the filename in the config.txt
 
 Change timer (optional)
@@ -41,14 +41,14 @@ Set-up an autostart to launch the program every time the RPI receives power. (op
 7. Open the terminal and enter the following:programa automatiskai pasileistu kai ijungiamas raspberry, paleidus RPi atidaryti terminal ir vesti sias komandas:
 
 	mkdir /home/pi/.config/autostart
-	sudo nano /home/pi/.config/autostart/GPIO.desktop
+	sudo nano /home/pi/.config/autostart/PIRVideo.desktop
 
 Then, paste the following code:
 ___________________________
 	[Desktop Entry]
 	Type=Application
 	Name=GPIO
-	Exec=processing-java --sketch=/home/pi/GPIOv11 --present
+	Exec=processing-java --sketch=/home/pi/PIRVideo --present
 _______________________________
 After pasting-  ctrl+x -> Y -> enter
 
@@ -60,7 +60,7 @@ TESTING
 
 In case you'd like to test the functionality without having to restart, or manually launch through processing's GUI, you can simply enter the following command into terminal:
 
-	processing-java --sketch=/home/pi/GPIOv11 --present
+	processing-java --sketch=/home/pi/PIRVideo --present
 
 Additionally, pressing 'd' in the sketch will launch a debug mode!
 
