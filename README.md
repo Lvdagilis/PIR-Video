@@ -5,7 +5,7 @@ This version specifically is written for a RaspberryPi using Processing and a ch
 
 <h1>Setup</h1>
 
-#Hardware
+##Hardware
 0. Connect PIR sensor to Raspberry PI.
 	In case you'd like to use the code provided without needing further modifications, use these pins:
 		Sensor pin to	GPIO21 
@@ -13,7 +13,7 @@ This version specifically is written for a RaspberryPi using Processing and a ch
 		GND pin to 	GPIO6
 	Please note that different PIR sensor have different layouts, so check accordingly. On some PIR sensors the pinout is underneath the fresnel lens (which can be very easily removed and replaced)
 
-#Software
+##Software
 In practice, this should be possible without needing to use Processing for Pi OS, however, between testing on various RaspberryPis with various states of OS (from fresh installs to old hacked ones), the process of getting the video libraries to run at a high framerate, while keeping an easy install process was just too unreliable. Sometimes it worked, sometimes it didn't, even if following the same steps on a fresh install on the same RPi.
 
 1. Install the Processing for Pi OS using Raspberry Pi Imager
@@ -30,14 +30,14 @@ In practice, this should be possible without needing to use Processing for Pi OS
 4. Add the desired video to /home/pi/PIRVideo/data. By default, the program is set to use a file called "movie.mp4"
 4. a. In case you have a different filename (recommend to use .mp4 encoding), you can change the filename in the config.txt
 
-Change timer (optional)
+##Change timer (optional)
 5. If needed, you can change the timer integrated into the program (in testing, the PIR sensor delays were very inaccurate). Enter the desired delay in the first line of config.txt, in milliseconds (ex.: 20s = 20000).
 
-Hide the RPi taskbar (optional)
+##Hide the RPi taskbar (optional)
 6. Right-click on taskbar, select "Panel Preferences" -> Advanced -> Properties -> uncheck "Reserve space, and not covered by maximised windows"
 
 
-Set-up an autostart to launch the program every time the RPI receives power. (optional)
+##Set-up an autostart to launch the program every time the RPI receives power. (optional)
 7. Open the terminal and enter the following:programa automatiskai pasileistu kai ijungiamas raspberry, paleidus RPi atidaryti terminal ir vesti sias komandas:
 
 	mkdir /home/pi/.config/autostart
@@ -52,7 +52,7 @@ ___________________________
 _______________________________
 After pasting-  ctrl+x -> Y -> enter
 
-8. Restart the Pi
+##8. Restart the Pi
 
 
 
@@ -79,4 +79,5 @@ TOP LEFT 	White when motion, fades to black (in time with the delay) once motion
 TOP RIGHT	Video preview
 BOTTOM HALF	Debug text, white background when motion = 1, black background when motion = 0. 
 
-
+#Sharing
+[Built with Processing](https://processing.org/)
