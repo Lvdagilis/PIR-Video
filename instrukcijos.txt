@@ -1,0 +1,60 @@
+
+Galima pabandyti be Processing Raspbian versijos, bet rekomenduociau su sita specifine operacine sistema kad video geriau veiktu
+
+0. prijungti PIR davikli (vidurinis (sensor) pin prie GPIO21 pin, PWR prie GPIO4, GND prie GPIO6 (pagal zemiau esancia diagrama). Ant skirtingu PIR skirtingai isdestytas GND ir PWR, tai reik atitinkamai pagal jusu tikrint
+0. a. https://www.raspberrypi.org/documentation/usage/gpio/images/GPIO-Pinout-Diagram-2.png
+
+1. Suinstaliuoti Processing Raspbian, naudojant Raspberry Pi Imager programa
+1. a. https://www.raspberrypi.org/software/ Atsisiusti Raspberry Pi Imager
+1. b. https://pi.processing.org/download/ Atsisiusti Raspberry Pi Image is Processing.org
+1. c. Pasirinkti "Choose OS" -> "Use custom" -> pasirinkti 1.b. atsisiusta image
+1. d. Pasirinkti RaspberryPi sd kortele
+1. e. "Write"
+
+2. Paleisti RaspberryPi
+
+3. Nukopijuoti prisegta zip, ji isksleisti i /home/pi (kad GPIOv11 aplankas butu jame, ir tada aplanke data aplankas + .pde file'as)
+
+4. Ikelti video i /home/pi/GPIOv11/data aplanka, geriausia su movie.mp4 pavadinimu
+4. a. Jei kitas pavadinimas - ji ivesti antroje config.txt eiluteje
+
+5. Jei reikia, galima pakeisti programines irangos puseje esanti laikmati pirmoje config.txt eiluteje. Ivesti laika millisekundemis (pvz 20s = 20000). Taip pat, primenu kad pats PIR daviklis turi ant saves laikmacio funkcija
+
+6.kad nerodytu taskbar - Right-click on taskbar, select "Panel Preferences" -> Advanced -> Properties -> uncheck "Reserve space, and not covered by maximised windows"
+
+7.kad programa automatiskai pasileistu kai ijungiamas raspberry, paleidus RPi atidaryti terminal ir vesti sias komandas:
+
+mkdir /home/pi/.config/autostart
+sudo nano /home/pi/.config/autostart/GPIO.desktop
+
+Iklijuoti sias eilutes
+___________________________
+[Desktop Entry]
+Type=Application
+Name=GPIO
+Exec=processing-java --sketch=/home/pi/GPIOv11 --present
+_______________________________
+iklijavus - ctrl+x -> Y -> jei rodo teisinga file'o pavadinima - enter
+
+8. perkrauti testavimui
+
+
+////////////////////////////////////////////////////////////////////////////
+Testavimui, galima paleisti programa terminale su sia komanda, ir tada kai pasileis galima paspausti 'd' klavisa ant klaviaturos, kad ijungti Debug mode.
+
+processing-java --sketch=/home/pi/GPIOv11 --present
+
+Debug mode info:
+motion		rodo ar raspberry gauna is PIR daviklio jog yra judesys (1=judesys, 0=nera judesio)
+Playing		rodo ar video grojamas
+Delay		kol yra judesys, rodys nustatyta laikmati. Kai judesys bus neberastas - prades mazeti iki 0, kai pasieks 0 - video sustoja
+Movie available	jeigu false - reiskia jog netinkamas video pavadinimas/formatas
+Movie time	kuriame video kadre - galima naudoti tikrinti ar video groja letai
+config time	koks laikmatis nustatytas config.txt file'e
+"" movie name	koks video pavadinimas nustatytas config.txt file'e
+
+Kairys virsutinis ketvirtis baltas kai yra judesys, blesta kai laikmatis pradeda veikti ir arteti prie pauzes
+Desinys virsutinis ketvirtis rodo video
+Apatine puse rodo teksta+baltas fonas kai judesys yra, juodas fonos kai judesio nera
+
+///////////////////////////////////////////////////////////////////////////
