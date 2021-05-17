@@ -55,8 +55,8 @@ After pasting-  ctrl+x -> Y -> enter
 8. Restart the Pi
 
 
-////////////////////////////////////////////////////////////////////////////
-TESTING
+
+#DEBUG MODE
 
 In case you'd like to test the functionality without having to restart, or manually launch through processing's GUI, you can simply enter the following command into terminal:
 
@@ -79,5 +79,4 @@ TOP LEFT 	White when motion, fades to black (in time with the delay) once motion
 TOP RIGHT	Video preview
 BOTTOM HALF	Debug text, white background when motion = 1, black background when motion = 0. 
 
-///////////////////////////////////////////////////////////////////////////
 
