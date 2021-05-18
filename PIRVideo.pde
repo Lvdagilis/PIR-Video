@@ -4,7 +4,7 @@
 
 //NDG PIR Video -- v1.00.0
 
-//CURRENT BUGS:
+//PAST BUGS:
 // 1. FIXED++ (ONLY SOLVED BY PI.PROCESSING.ORG raspbian image)
 //    Video does not play with GLVideo library
 // 2. FIXED++ Video laggy with processing.video* library
@@ -17,13 +17,13 @@
 
 
 //To-do:
-//1. Implement a config file, so that once exported - values can be changed
-//2. add debug mode for installation (pressing a button or key would trigger a new screen with:
+//1. DONE++ Implement a config file, so that once exported - values can be changed (up+down arrow keys to change timer)
+//2. DONE++ add debug mode for installation (pressing a button or key would trigger a new screen with:
 //   DONE++a. video in corner
 //   DONE++b. playback status
 //   DONE++c. status of movement (detected or not)
 //   DONE++d. status of delay (in case movement no longer detected - how long left until video pauses)
-//   e. allow seeing set values, and to change them.
+//   DONE++e. allow seeing set values, and to change them. (up+down arrow keys to change timer)
 
 //
 //
